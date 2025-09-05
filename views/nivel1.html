@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Espejo del Alba – Nivel 1</title>
+  <link rel="stylesheet" href="./../css/styles.css">
+</head>
+<body>
+  <div class="fog-bg"></div>
+  <audio id="bg-music" src="../assets/music/misterio.mp3" loop></audio>
+  <div class="music-controls">
+    <button id="play-music">🔊 Música</button>
+    <input type="range" id="music-volume" min="0" max="1" step="0.01" value="0.5">
+  </div>
+  <h1>🌅 Nivel 1 – El Embarcadero del Recuerdo</h1>
+
+  <div class="timer">⏳ Cargando temporizador...</div>
+
+  <p>
+    El Guardián del Alba susurra:<br>
+    <em>“Solo quien recuerde el orden del color podrá continuar con el enigma del <strong>Lago de Olvido</strong>.”</em>
+  </p>
+
+  <p>
+    Encuentra los cuatro símbolos y selecciona el orden correcto según la marca secreta que has descubierto:
+  </p>
+
+  <div class="symbols">
+    <select>
+      <option value="">-- símbolo 1 --</option>
+      <option value="circulo"> Círculo</option>
+      <option value="cuadrado"> Cuadrado</option>
+      <option value="triangulo"> Triángulo</option>
+      <option value="cruz"> Cruz</option>
+    </select>
+    <select>
+      <option value="">-- símbolo 2 --</option>
+      <option value="circulo"> Círculo</option>
+      <option value="cuadrado"> Cuadrado</option>
+      <option value="triangulo"> Triángulo</option>
+      <option value="cruz"> Cruz</option>
+    </select>
+    <select>
+      <option value="">-- símbolo 3 --</option>
+      <option value="circulo"> Círculo</option>
+      <option value="cuadrado"> Cuadrado</option>
+      <option value="triangulo"> Triángulo</option>
+      <option value="cruz"> Cruz</option>
+    </select>
+    <select>
+      <option value="">-- símbolo 4 --</option>
+      <option value="circulo"> Círculo</option>
+      <option value="cuadrado"> Cuadrado</option>
+      <option value="triangulo"> Triángulo</option>
+      <option value="cruz"> Cruz</option>
+    </select>
+  </div>
+
+  <button id="validate">Validar orden</button>
+  <div class="message"></div>
+  <div class="next-level"></div>
+  <script src="./../js/js.js"></script>
+  <script src="../js/index.js"></script>
+</body>
+</html>
