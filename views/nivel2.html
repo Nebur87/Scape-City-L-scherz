@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=hola, initial-scale=1.0">
+        <title>Nivel 2</title>
+        <link rel="stylesheet" href="./../css/styles.css">
+
+</head>
+<body>
+    <div class="fog-bg"></div>
+    <audio id="bg-music" src="../assets/music/misterio.mp3" loop></audio>
+    <div class="music-controls">
+        <button id="play-music">🔊 Música</button>
+        <input type="range" id="music-volume" min="0" max="1" step="0.01" value="0.5">
+    </div>
+    <h1>🔢 Nivel 2 – El Reto de los Dígitos</h1>
+    <div class="timer">⏳ Cargando temporizador...</div>
+    <div class="digits-section">
+        <p>Encuentra los 4 dígitos ocultos y escríbelos aquí:</p>
+    <input type="text" id="digits-input" class="digits-input" maxlength="4" pattern="\d{4}" placeholder="-- --">
+        <button id="hint-btn">Pista</button>
+        <div class="hint-message"></div>
+        <button id="validate-digits">Validar</button>
+        <div class="message"></div>
+    <div class="next-level"></div>
+    <div id="qr-reader" class="qr-reader" style="display:none;"></div>
+    <div id="qr-reader-results" class="qr-reader-results"></div>
+    </div>
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <script src="../js/js.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/nivel2.js"></script>
+</body>
+</html>

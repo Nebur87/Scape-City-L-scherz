@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Mapa Final</title>
+    <link rel="stylesheet" href="./../css/styles.css">
+</head>
+<body>
+    <div class="centered-nivel6">
+        <h1>El Gran Puzzle del Mapa</h1>
+        <p>¡Último reto! Junta todas las piezas del mapa y valida tu resultado.</p>
+        <div class="map-validation-area">
+            <div style="position:relative;display:inline-block;width:400px;height:300px;">
+                <video id="video-mapa" width="400" height="300" autoplay playsinline style="background:#222;position:absolute;top:0;left:0;z-index:1;border-radius:12px;"></video>
+                <img src="./../assets/img/silueta-suiza.png" alt="Silueta Suiza" id="silueta-mapa" style="width:380px;height:285px;opacity:0.4;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;pointer-events:none;">
+            </div>
+            <div style="margin-top:20px;">
+                <button id="capture-mapa-btn">Capturar foto alineada</button>
+            </div>
+            <canvas id="canvas-mapa" width="400" height="300" style="display:none;margin-top:20px;border-radius:12px;"></canvas>
+            <div id="validation-msg" style="margin-top:20px;"></div>
+            <button id="next-level-btn" style="display:none;margin-top:30px;">¡Puzzle validado! Siguiente nivel</button>
+        </div>
+    </div>
+    <script async src="https://docs.opencv.org/4.x/opencv.js"></script>
+    <script src="./../js/nivel7.js"></script>
+</body>
+</html>

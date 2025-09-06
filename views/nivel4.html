@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <title>Nivel 4 – El Enigma Visual</title>
+    <link rel="stylesheet" href="./../css/styles.css">
+    <div class="fog-bg"></div>
+    <audio id="bg-music" src="../assets/music/misterio.mp3" loop></audio>
+    <div class="music-controls">
+        <button id="play-music">🔊 Música</button>
+        <input type="range" id="music-volume" min="0" max="1" step="0.01" value="0.5">
+    </div>
+    <h1>🖼️ Nivel 4 – Las Aguas del Recuerdo</h1>
+    <div class="timer">⏳ Cargando temporizador...</div>
+            <div class="image-section">
+                <img src="./../assets/img/fuente1-nivel4.jpg" alt="Recuerdas dónde está?" class="enigma-img">
+                <p class="intro-text">Observa la imagen y descubre a qué lugar debes dirigirte para continuar tu aventura. 
+                    <p>Debes buscar más pistas en cada punto de éste nivel para obtener los objetos necesarios para continuar.</p>
+                    <button id="confirm-location" class="confirm-location-btn">Ya estoy en el lugar</button>
+                        <div id="photo-1" class="step-photo" style="display:none;"><img src="./../assets/img/fuente2-nivel4.jpg" alt="Foto 1" class="next-location-img"></div>
+                    <button id="found-clue" class="confirm-location-btn" style="display:none;">Conseguido!!</button>
+                        <div id="photo-2" class="step-photo" style="display:none;"><img src="./../assets/img/fuente3-nivel4.jpg" alt="Foto 2" class="next-location-img"></div>
+                    <button id="ready-next" class="confirm-location-btn" style="display:none;">Conseguido</button>
+                        <div id="photo-3" class="step-photo" style="display:none;"><img src="./../assets/img/fuente4-nivel4.jpg" alt="Foto 3" class="next-location-img"></div>
+                    <div id="new-instructions" class="new-instructions"></div>
+                                <div id="answer-section" class="answer-section" style="display:none;">
+                                    <div id="next-location-photos" class="next-location-photos" style="display:none; margin-bottom:30px; text-align:center;">
+                                        <img src="../assets/img/lugar1.jpg" alt="Siguiente lugar 1" class="next-location-img">
+                                        <img src="../assets/img/lugar2.jpg" alt="Siguiente lugar 2" class="next-location-img">
+                                    </div>
+                                    <label for="answer-input" class="secret-label">Introduce la palabra secreta:</label><br>
+                                    <input type="text" id="answer-input" class="secret-input" placeholder="Escribe la palabra...">
+                                    <br>
+                                    <button id="validate-answer" class="confirm-location-btn">Validar</button>
+                                    <div id="answer-message" class="new-instructions"></div>
+                                <div id="qr-reader" class="qr-reader" style="display:none;"></div>
+                                <div id="qr-reader-results" class="qr-reader-results"></div>
+                                </div>
+            </div>
+                <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+                    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+                    <script src="../js/nivel4.js"></script>
+    <script src="../js/js.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>
