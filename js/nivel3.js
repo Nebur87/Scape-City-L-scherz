@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextLevelEl = document.querySelector('.next-level');
 
   validateBtn.addEventListener('click', () => {
-    if (secretInput.value.trim().toLowerCase() === correctWord) {
+    if (secretInput.value.trim().toLowerCase() === correctWord.toLowerCase()) {
       messageEl.textContent = '¡Correcto! Has encontrado la palabra secreta. Resuelve el siguiente acertijo:';
       // Mostrar segundo acertijo y campo
       if (!document.getElementById('second-riddle')) {

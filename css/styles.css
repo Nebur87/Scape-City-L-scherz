@@ -1,3 +1,4 @@
+
 /* Centrado para nivel6 */
 .centered-nivel6 {
   display: flex;
@@ -252,3 +253,233 @@ button:hover {
   box-shadow: 0 4px 24px #0006;
   margin: 20px 0;
 }
+/* Nivel 4 estilos */
+.image-section {
+  text-align: center;
+  margin: 40px 0;
+}
+.enigma-img {
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #0006;
+}
+.confirm-location-btn {
+  margin-top: 30px;
+  font-size: 1.2em;
+  padding: 12px 32px;
+  background: #f5c518;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #0005;
+  transition: background 0.2s;
+}
+.confirm-location-btn:hover {
+  background: #ffe066;
+}
+.new-instructions {
+  margin-top: 30px;
+  font-size: 1.15em;
+  color: #e0e0e0;
+}
+/* Fondo animado de niebla */
+.fog-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url('https://i.imgur.com/2QKQb6L.png') repeat;
+  opacity: 0.25;
+  animation: fogMove 60s linear infinite;
+}
+@keyframes fogMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+body > .intro-container, .music-controls {
+  position: relative;
+  z-index: 1;
+}
+
+.music-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.music-controls button {
+  background: #222;
+  color: #f5c518;
+  border: none;
+  font-size: 1.1em;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.music-controls input[type=range] {
+  width: 120px;
+}
+/* Presentación inmersiva index.html */
+.intro-container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: rgba(30,30,40,0.85);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #0008;
+  padding: 40px 30px;
+  text-align: center;
+}
+.intro-container h1 {
+  color: #f5c518;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+}
+.intro-text {
+  font-size: 1.25em;
+  color: #e0e0e0;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+.start-btn {
+  background: #f5c518;
+  color: #222;
+  font-size: 1.2em;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #0005;
+  transition: background 0.2s;
+}
+.start-btn:hover {
+  background: #ffe066;
+}
+/* Nivel 2: input grande y separado */
+.digits-input {
+  font-size: 2.5em;
+  letter-spacing: 1.5em;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.qr-reader {
+  width: 300px;
+  margin: 20px auto;
+}
+.qr-reader-results {
+  text-align: center;
+}
+
+/* Nivel 3: acertijo y campo secreto */
+.acertijo {
+  background-color: #f5c518;
+  color: black;
+  font-size: 1.2em;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 30px 0;
+  text-align: center;
+}
+.secret-section {
+  text-align: center;
+}
+.secret-label {
+  font-size: 1.1em;
+}
+.secret-input {
+  font-size: 2em;
+  text-align: center;
+  margin: 20px 0;
+  width: 80%;
+  max-width: 350px;
+}
+body {
+  background-color: #0e0e0e;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #f5c518;
+  text-align: center;
+}
+
+.timer {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.symbols {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.symbols select {
+  padding: 10px;
+  font-size: 1em;
+  background-color: #222;
+  color: #f5f5f5;
+  border: 1px solid #555;
+}
+
+button {
+  background-color: #f5c518;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.digits-section button {
+  margin-right: 10px;
+
+}
+
+button:hover {
+  background-color: #e6b007;
+  transform: scale(1.05);
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .symbols {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .timer {
+        font-size: 1.2em;
+    }
+    button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1em;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
