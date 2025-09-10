@@ -1,5 +1,11 @@
 // Lógica para validar el puzzle del mapa en nivel7 con OpenCV.js
 function initNivel7() {
+  // Ir al nivel 8 al pulsar el botón
+  if (nextLevelBtn) {
+    nextLevelBtn.onclick = function() {
+      window.location.href = '../views/nivel8.html';
+    };
+  }
   const video = document.getElementById('video-mapa');
   const silueta = document.getElementById('silueta-mapa');
   const captureBtn = document.getElementById('capture-mapa-btn');

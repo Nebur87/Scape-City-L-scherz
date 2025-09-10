@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Guardián del Lago – Nivel Final</title>
+    <link rel="stylesheet" href="./../css/styles.css">
+</head>
+<body>
+    <div class="fog-bg"></div>
+    <audio id="bg-music" src="../assets/music/misterio.mp3" loop></audio>
+    <div class="music-controls">
+        <button id="play-music">🔊 Música</button>
+        <input type="range" id="music-volume" min="0" max="1" step="0.01" value="0.5">
+    </div>
+    <h1>🏆 Nivel 8 – El Guardián del Lago</h1>
+    <div class="timer">⏳ Cargando temporizador...</div>
+    <div class="final-riddle-section">
+        <p class="acertijo">Has recorrido el embarcadero, descifrado los dígitos, superado el parque y las aguas del recuerdo. Has unido el mapa y encontrado la silueta.<br><br>
+        Ahora, para liberar el secreto del lago, deberás recordar y unir todos los elementos clave de tu viaje:</p>
+        <ol>
+            <li>Escribe, en orden, los símbolos que encontraste en el primer nivel:</li>
+            <div class="symbols">
+                <select id="symbol1">
+                    <option value="">-- símbolo 1 --</option>
+                    <option value="circulo">Círculo</option>
+                    <option value="cuadrado">Cuadrado</option>
+                    <option value="triangulo">Triángulo</option>
+                    <option value="cruz">Cruz</option>
+                </select>
+                <select id="symbol2">
+                    <option value="">-- símbolo 2 --</option>
+                    <option value="circulo">Círculo</option>
+                    <option value="cuadrado">Cuadrado</option>
+                    <option value="triangulo">Triángulo</option>
+                    <option value="cruz">Cruz</option>
+                </select>
+                <select id="symbol3">
+                    <option value="">-- símbolo 3 --</option>
+                    <option value="circulo">Círculo</option>
+                    <option value="cuadrado">Cuadrado</option>
+                    <option value="triangulo">Triángulo</option>
+                    <option value="cruz">Cruz</option>
+                </select>
+                <select id="symbol4">
+                    <option value="">-- símbolo 4 --</option>
+                    <option value="circulo">Círculo</option>
+                    <option value="cuadrado">Cuadrado</option>
+                    <option value="triangulo">Triángulo</option>
+                    <option value="cruz">Cruz</option>
+                </select>
+            </div>
+            <li>Introduce la palabra secreta del parque:</li>
+            <input type="text" id="final-secret-word" class="secret-input" placeholder="Palabra secreta...">
+            <li>¿Cuál era la palabra que había en la fuente?</li>
+            <input type="text" id="final-fountain-word" class="secret-input" placeholder="Palabra de la fuente...">
+                <li id="celebration-msg" style="display:none;">Sube una foto de tu equipo celebrando junto a estos peces:</li>
+                <input type="file" id="final-photo" accept="image/*"><br>
+                <input type="file" id="final-photo" accept="image/*" style="display:none;"><br>
+                <img id="peces-img" src="./../assets/img/peces-lchrz.jpg" style="max-width:200px;display:none;margin-top:10px;">
+                <img id="preview-final-photo" style="max-width:200px;display:none;margin-top:10px;"><br>
+        </ol>
+        <button id="validate-final" class="confirm-location-btn">Validar y terminar</button>
+        <div id="final-message" class="new-instructions"></div>
+    </div>
+    <!-- Sonido de celebración -->
+    <audio id="celebration-sound" src="../assets/music/celebracion.mp3" preload="auto"></audio>
+    <!-- Canvas para confeti -->
+    <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:999;display:none;"></canvas>
+    <script src="../js/js.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/nivel8.js"></script>
+</body>
+</html>
