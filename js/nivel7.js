@@ -11,7 +11,7 @@ function initNivel7() {
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({
       video: {
-        facingMode: { exact: "environment" }
+        facingMode: "environment"
       }
     })
       .then(function(stream) {
