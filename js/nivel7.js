@@ -10,80 +10,16 @@ function initNivel7() {
     const nextLevelBtn = document.getElementById('next-level-btn');
 
     // Ir al nivel 8 al pulsar el botón
-    if (nextLevelBtn) {
-      nextLevelBtn.onclick = function() {
-        window.location.href = '../views/nivel8.html';
-      };
-    }
-
-    // Acceso a la cámara
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({
-        video: {
-          facingMode: "environment"
-        }
-      })
-        .then(function(stream) {
-          video.srcObject = stream;
-          video.play();
-        })
-        .catch(function(err) {
-          // Si no se puede acceder a la trasera, intenta con la predeterminada
-          navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function(stream) {
-              video.srcObject = stream;
-              video.play();
-              validationMsg.innerHTML = 'No se pudo acceder a la cámara trasera, usando la predeterminada.';
-            })
-            .catch(function(err2) {
-              validationMsg.innerHTML = 'No se pudo acceder a la cámara: ' + err2.message;
-            });
-        });
-    } else {
-      validationMsg.innerHTML = 'Tu navegador no soporta acceso a la cámara.';
-    }
-
-    // Validación automática de contorno (estructura)
-    if (captureBtn && canvas && video && silueta) {
       captureBtn.onclick = function() {
         canvas.style.display = 'block';
         const ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-        // Procesamiento con OpenCV
-        if (typeof cv !== 'undefined') {
-          // Captura la imagen del canvas (solo video)
-          let src = cv.imread(canvas);
-          let gray = new cv.Mat();
-          cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0);
-          let edges = new cv.Mat();
-          cv.Canny(gray, edges, 10, 50, 3, false); // Parámetros bajos para más sensibilidad
-
-          // Captura la silueta sola para comparar
-          let silCanvas = document.createElement('canvas');
-          silCanvas.width = canvas.width;
-          silCanvas.height = canvas.height;
-          let silCtx = silCanvas.getContext('2d');
-          silCtx.drawImage(silueta, 0, 0, silCanvas.width, silCanvas.height);
-          let silMat = cv.imread(silCanvas);
-          let silGray = new cv.Mat();
-          cv.cvtColor(silMat, silGray, cv.COLOR_RGBA2GRAY, 0);
-          let silEdges = new cv.Mat();
-          cv.Canny(silGray, silEdges, 10, 50, 3, false);
-          // Mostrar los canvas originales para depuración
-          const canvasOriginalVideo = document.getElementById('canvas-original-video');
-          const canvasOriginalSilueta = document.getElementById('canvas-original-silueta');
-          if (canvasOriginalVideo && canvasOriginalSilueta) {
-            // Video original
-            let tempVideo = new cv.Mat();
-            cv.resize(src, tempVideo, new cv.Size(200, 150), 0, 0, cv.INTER_AREA);
-            cv.imshow(canvasOriginalVideo, tempVideo);
-            tempVideo.delete();
-            // Silueta original
-            let tempSilueta = new cv.Mat();
-            cv.resize(silMat, tempSilueta, new cv.Size(200, 150), 0, 0, cv.INTER_AREA);
-            cv.imshow(canvasOriginalSilueta, tempSilueta);
+        // Validación simplificada: siempre permite avanzar
+        canvas.style.border = '4px solid #0f0';
+        validationMsg.innerHTML = '¡Captura realizada! Puedes avanzar.';
+        nextLevelBtn.style.display = 'inline-block';
+      };
             tempSilueta.delete();
           }
 
