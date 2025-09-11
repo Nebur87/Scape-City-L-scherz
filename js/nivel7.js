@@ -58,7 +58,7 @@ function initNivel7() {
           let gray = new cv.Mat();
           cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0);
           let edges = new cv.Mat();
-          cv.Canny(gray, edges, 50, 150, 3, false);
+          cv.Canny(gray, edges, 10, 50, 3, false); // Parámetros bajos para más sensibilidad
 
           // Captura la silueta sola para comparar
           let silCanvas = document.createElement('canvas');
@@ -70,7 +70,22 @@ function initNivel7() {
           let silGray = new cv.Mat();
           cv.cvtColor(silMat, silGray, cv.COLOR_RGBA2GRAY, 0);
           let silEdges = new cv.Mat();
-          cv.Canny(silGray, silEdges, 50, 150, 3, false);
+          cv.Canny(silGray, silEdges, 10, 50, 3, false);
+          // Mostrar los canvas originales para depuración
+          const canvasOriginalVideo = document.getElementById('canvas-original-video');
+          const canvasOriginalSilueta = document.getElementById('canvas-original-silueta');
+          if (canvasOriginalVideo && canvasOriginalSilueta) {
+            // Video original
+            let tempVideo = new cv.Mat();
+            cv.resize(src, tempVideo, new cv.Size(200, 150), 0, 0, cv.INTER_AREA);
+            cv.imshow(canvasOriginalVideo, tempVideo);
+            tempVideo.delete();
+            // Silueta original
+            let tempSilueta = new cv.Mat();
+            cv.resize(silMat, tempSilueta, new cv.Size(200, 150), 0, 0, cv.INTER_AREA);
+            cv.imshow(canvasOriginalSilueta, tempSilueta);
+            tempSilueta.delete();
+          }
 
           // Compara los contornos: calcula la diferencia de píxeles
           let diff = new cv.Mat();
