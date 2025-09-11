@@ -48,15 +48,13 @@ function initNivel7() {
       captureBtn.onclick = function() {
         canvas.style.display = 'block';
         const ctx = canvas.getContext('2d');
+        // Captura solo el frame del video
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        // Dibuja la silueta encima
-        ctx.globalAlpha = 0.4;
-        ctx.drawImage(silueta, 0, 0, canvas.width, canvas.height);
-        ctx.globalAlpha = 1.0;
 
         // Procesamiento con OpenCV
         if (typeof cv !== 'undefined') {
-          // Captura la imagen del canvas (video + silueta)
+          // Captura la imagen del canvas (solo video)
           let src = cv.imread(canvas);
           let gray = new cv.Mat();
           cv.cvtColor(src, gray, cv.COLOR_RGBA2GRAY, 0);
@@ -82,7 +80,7 @@ function initNivel7() {
           let total = diff.rows * diff.cols;
           let similarity = 1 - (nonZero / total); // 1 = idéntico, 0 = nada igual
 
-          if (similarity > 0.85) { // Umbral ajustable
+          if (similarity > 0.70) { // Umbral menos estricto
             canvas.style.border = '4px solid #0f0';
             validationMsg.innerHTML = '¡Contorno alineado correctamente! Puedes avanzar.';
             nextLevelBtn.style.display = 'inline-block';
