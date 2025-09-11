@@ -9,13 +9,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Activar cámara y mostrar en el video
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({ video: true })
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: 'environment' } } })
       .then(function(stream) {
         video.srcObject = stream;
         video.play();
       })
       .catch(function(err) {
-        validationMsg.innerHTML = 'No se pudo acceder a la cámara: ' + err.name;
+        // Si no se puede acceder a la trasera, intenta con la predeterminada
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function(stream) {
+            video.srcObject = stream;
+            video.play();
+          })
+          .catch(function(err2) {
+            validationMsg.innerHTML = 'No se pudo acceder a la cámara: ' + err2.name;
+          });
       });
   } else {
     validationMsg.innerHTML = 'La cámara no es compatible con este navegador.';
