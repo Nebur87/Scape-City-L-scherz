@@ -79,13 +79,21 @@ function initNivel7() {
           let total = diff.rows * diff.cols;
           let similarity = 1 - (nonZero / total); // 1 = idéntico, 0 = nada igual
 
-          if (similarity > 0.60) { // Umbral tolerante
+          // Dibuja los bordes en los canvas extra para depuración visual
+          const canvasBordesVideo = document.getElementById('canvas-bordes-video');
+          const canvasBordesSilueta = document.getElementById('canvas-bordes-silueta');
+          if (canvasBordesVideo && canvasBordesSilueta) {
+            cv.imshow(canvasBordesVideo, edges);
+            cv.imshow(canvasBordesSilueta, silEdges);
+          }
+
+          if (similarity > 0.40) { // Umbral aún más tolerante
             canvas.style.border = '4px solid #0f0';
-            validationMsg.innerHTML = '¡Contorno alineado correctamente! Puedes avanzar.';
+            validationMsg.innerHTML = '¡Contorno alineado correctamente! Puedes avanzar.<br>Similarity: ' + similarity.toFixed(2);
             nextLevelBtn.style.display = 'inline-block';
           } else {
             canvas.style.border = '4px solid #f00';
-            validationMsg.innerHTML = 'El contorno no coincide lo suficiente. Ajusta la posición y vuelve a intentar.';
+            validationMsg.innerHTML = 'El contorno no coincide lo suficiente. Ajusta la posición y vuelve a intentar.<br>Similarity: ' + similarity.toFixed(2);
             nextLevelBtn.style.display = 'none';
           }
 
