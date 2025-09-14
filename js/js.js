@@ -31,7 +31,7 @@ function updateTimer(endTime) {
 }
 
 // Validación de símbolos
-const correctOrder = ['cuadrado', 'circulo', 'triangulo', 'cruz'];
+const correctOrder = ['cuadrado', 'circulo', 'cruz', 'triangulo'];
 
 function validateSymbols() {
   const selects = document.querySelectorAll('.symbols select');

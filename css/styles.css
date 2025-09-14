@@ -1,3 +1,22 @@
+/* Barra de progreso para niveles */
+.progress-container {
+  width: 100%;
+  background: #eee;
+  border-radius: 8px;
+  margin: 16px 0 24px 0;
+  box-shadow: 0 2px 8px #0001;
+}
+.progress-bar {
+  height: 28px;
+  background: linear-gradient(90deg, #4caf50 60%, #8bc34a 100%);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 8px;
+  transition: width 0.4s;
+  font-size: 1.1em;
+}
 
 /* Centrado para nivel6 */
 .centered-nivel6 {

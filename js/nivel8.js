@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fountainWord = fuenteWordInput ? fuenteWordInput.value.trim().toLowerCase() : '';
 
     // Respuestas correctas
-    const correctSymbols = ['circulo', 'cuadrado', 'triangulo', 'cruz'];
+    const correctSymbols = ['cuadrado', 'circulo', 'cruz', 'triangulo'];
   const correctSecretWord = 'recuerdo';
     const correctFountainWord = 'bielersee';
 
@@ -147,13 +147,13 @@ document.addEventListener('DOMContentLoaded', () => {
         symbol3 !== correctSymbols[2] ||
         symbol4 !== correctSymbols[3]
       ) {
-        errorMsg += 'Los símbolos no son correctos.<br>Respuesta esperada: ' + correctSymbols.join(', ') + '<br>';
+        errorMsg += 'Los símbolos no son correctos.<br>';
       }
       if (secretWord !== correctSecretWord) {
-        errorMsg += 'La palabra secreta no es correcta.<br>Respuesta esperada: ' + correctSecretWord + '<br>';
+        errorMsg += 'La palabra secreta no es correcta.<br>';
       }
       if (fountainWord !== correctFountainWord) {
-        errorMsg += 'La palabra de la fuente no es correcta.<br>Respuesta esperada: ' + correctFountainWord + '<br>';
+        errorMsg += 'La palabra de la fuente no es correcta.<br>';
       }
       errorMsg += '</div>';
       finalMsg.innerHTML = errorMsg;
