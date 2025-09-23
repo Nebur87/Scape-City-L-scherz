@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">scape-city-luscherz</string>
+    <string name="title_activity_main">scape-city-luscherz</string>
+    <string name="package_name">com.nebur87.scapecity</string>
+    <string name="custom_url_scheme">com.nebur87.scapecity</string>
+</resources>
