@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nivel 5 – El Enigma del Agua</title>
+	<link rel="stylesheet" href="./../css/styles.css">
+</head>
+<body>
+	<div class="fog-bg"></div>
+	<audio id="bg-music" src="../assets/music/misterio.mp3" loop></audio>
+	<div class="music-controls">
+		<button id="play-music">🔊 Música</button>
+		<input type="range" id="music-volume" min="0" max="1" step="0.01" value="0.5">
+	</div>
+	<h1>💧 Nivel 5 – El Enigma de lo invisible</h1>
+	<div class="timer">⏳ Cargando temporizador...</div>
+	<div class="acertijo-section">
+		<p class="acertijo">Cerca del ayuntamiento, donde la vida florece y el agua se esconde,<br>
+		busca el reguero oculto que da vida al jardín.<br><br>
+		¿Serás capaz de encontrar el punto donde el agua brota en secreto?</p>
+	<button id="found-sprinkler-initial" class="confirm-location-btn">¡Lo encontré!</button>
+	<div id="sprinkler-message" class="new-instructions"></div>
+	<button id="found-sprinkler" class="confirm-location-btn" style="display:none;">He encontrado el aspersor</button>
+		<div id="sprinkler-message" class="new-instructions"></div>
+		<div id="next-riddle-section" class="acertijo-section" style="display:none;">
+			<p class="acertijo">El siguiente acertijo:<br><br>
+			Debes buscar el mensaje invisible que se oculta entre las paredes de dos tiempos, presente y pasado.<br>
+			¿Serás capaz de encontrarlo?</p>
+			<button id="found-message" class="confirm-location-btn">He encontrado el mensaje invisible</button>
+			<div id="message-found-msg" class="new-instructions"></div>
+			<button id="next-level-btn" class="confirm-location-btn" style="display:none;">Siguiente nivel</button>
+		</div>
+	</div>
+	<script src="../js/js.js"></script>
+	<script src="../js/index.js"></script>
+	<script src="../js/nivel5.js"></script>
+</body>
+</html>

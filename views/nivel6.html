@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descifra el Enigma</title>
+    <link rel="stylesheet" href="./../css/styles.css">
+</head>
+<body>
+    <div class="centered-nivel6">
+        <h1>Descifra el Enigma</h1>
+        <p>Bienvenido al nivel 6. Aquí comienza tu verdadero desafío.</p>
+        <div class="nivel6-instruccion">
+            <p>Has conseguido la palabra clave en el nivel 5, dirígete hacia este lugar. Cuando estés ahí, pulsa el botón.</p>
+            <button id="btn-ya-estoy-aqui">Ya estoy aquí</button>
+        </div>
+        <div class="enigma-box" id="enigma-box" style="display:none;">
+            <img src="./../assets/img/surf.jpg" alt="Caja de madera" class="enigma-img">
+            <p>Debes encontrar la caja de madera y resolver los puzzles metálicos que hay en su interior.</p>
+            <p></p>Para validar el nivel, sube dos fotos:</p>
+            <strong>1.</strong> Una foto con las piezas separadas (resueltas).<br>
+            <strong>2.</strong> Una foto con las piezas juntas de nuevo.</p>
+            <label for="photo-separated">Foto piezas separadas:</label><br>
+            <input type="file" id="photo-separated" accept="image/*"><br>
+            <img id="preview-separated" style="max-width:200px;display:none;margin-top:10px;"><br><br>
+            <label for="photo-joined">Foto piezas juntas:</label><br>
+            <input type="file" id="photo-joined" accept="image/*"><br>
+            <img id="preview-joined" style="max-width:200px;display:none;margin-top:10px;"><br><br>
+            <button id="upload-btn">Subir fotos</button>
+            <div id="validation-msg"></div>
+            <button id="next-level-btn" style="display:none;">Siguiente nivel</button>
+        </div>
+    </div>
+    <script src="./../js/nivel6.js"></script>
+</body>
+</html>
